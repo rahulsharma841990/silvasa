@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -178,7 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Yajra\Datatables\DataTablesServiceProvider::class,
         Yajra\Datatables\ButtonsServiceProvider::class,
-        Yajra\Datatables\HtmlServiceProvider::class
+        Yajra\Datatables\HtmlServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -229,6 +231,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
     'DataTables' => Yajra\Datatables\Facades\DataTables::class,
+    'Form' => Collective\Html\FormFacade::class,
+      'Html' => Collective\Html\HtmlFacade::class,
 
 ],
 
