@@ -23,4 +23,7 @@ class AdminController extends Controller
     public function sliderList(SliderDatatable $datatable){
     	return $datatable->render('admin_view.pages.slider-list');
     }
+    public function addnews(){
+    	return view('admin_view.pages.add-news');
+    }
 }

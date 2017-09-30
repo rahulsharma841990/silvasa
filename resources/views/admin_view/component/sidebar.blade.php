@@ -8,9 +8,10 @@
                             </form>
                         </li>
                         <li class="sidebar-hide"><h4 class="sidebar-title-section">Main</h4></li>
-                        <li class="active"><a href="index.html"><i class="icon-home"></i><span class="menu-title">Dashboard</span></a>
+                        <li class="active"><a href="{{route('administrator')}}"><i class="icon-home"></i><span class="menu-title">Dashboard</span></a>
                         </li>
-                        <li><a href="{{route('slider')}}"><i class="icon-user"></i><span class="menu-title">Slider</span></li>
+                        <li><a href="{{route('slider')}}"><i class="icon-user"></i><span class="menu-title">Slider</span></a></li>
+                        <li><a href="{{route('add-news')}}"><i class="icon-user"></i><span class="menu-title">Add News</span></a></li>
                        
                     </ul>
                 </div>

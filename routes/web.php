@@ -17,6 +17,7 @@
 		Route::get('administrator',['as'=>'administrator', 'uses'=>'Admin\AdminController@dashboard']);
 		Route::get('slider',['as'=>'slider','uses'=>'Admin\AdminController@slider']);
 		Route::get('slider/list',['as'=>'slider.list','uses'=>'Admin\AdminController@sliderList']);
+		Route::get('add-news',['as'=>'add-news','uses'=>'Admin\AdminController@addnews']);
 
 	});
 	/*end of admin links */
