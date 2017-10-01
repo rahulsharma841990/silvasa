@@ -474,6 +474,49 @@
                     </div>
                     <!-- end widget -->
 
+
+                    <!--calender-->
+                       <div class="widget">
+                        <div class="widget-title">
+                            <h4>Calender</h4>
+                            <hr>
+                        </div>
+                        <!-- end widget-title -->
+
+                        <div class="review-posts m30">
+                            <div class="post-review">
+                               
+                               
+                                <div class="post-title">
+                                    <!--calender-->
+   
+  
+
+ 
+Date: <div id="datepicker"></div>
+
+ 
+
+
+
+
+
+                                </div>
+                                <!-- end post-title -->
+                            </div>
+                            <!-- end post-review -->
+
+                         
+
+                           
+                          
+                          
+                        </div>
+                       
+                    </div>
+
+                    <!--end of calender
+
                   
 
                 </div>
