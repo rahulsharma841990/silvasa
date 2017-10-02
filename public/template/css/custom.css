@@ -75,3 +75,6 @@ div.bbp-template-notice p,
 #sitefooter-wrap{
     padding:14px 0px !important;
 }
+table.dataTable tbody tr td img{
+    width:50px;
+}

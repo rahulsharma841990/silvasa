@@ -1,4 +1,4 @@
-
+    
 @extends('admin_view.layouts.main')
 <!--BEGIN HORIZONTAL MENU-->
 @section('admin_view.content')
@@ -27,8 +27,8 @@
                             <div class="panel-body">
                                 <div id="viewcode-editor-markdown" class="viewcode-example">
 
-                                  {!!Form::open(['url'=>'news/submit'])!!}
-                                        {!!Form::text('title',Null,['class'=>'form-control mbm','placeholder'=>'Enter a title']) !!}
+                                  {!!Form::open(['url'=>'news/submit','method'=>'post','enctype'=>'multipart/form-data'])!!}
+                                        {!!Form::text('title',Null,[ 'class'=>'form-control mbm','placeholder'=>'enter title'   ]) !!}
                                         @if($errors->has('title'))
                                             {{$errors->first('title')}}
                                         @endif
@@ -48,6 +48,7 @@
                                         <!--end of editor-->
                                         {!!Form::file('img') !!}
                                         @if($errors->has('img'))
+
                                             {{$errors->first('img',['class'=>'form-control mbm'])}}
                                         @endif
 

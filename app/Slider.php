@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slider extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['title','desc','img','link_to_post'];
+   	protected $hidden=[
+   	'remember_token',];
 }

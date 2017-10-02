@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\DataTables\SliderDatatable;
 use App\DataTables\NewsDatatable;
 use App\addnews;
+use App\slider;
 
 class AdminController extends Controller
 {
@@ -28,7 +29,8 @@ class AdminController extends Controller
      public function newsList(NewsDatatable $datatable){
         return $datatable->render('admin_view.pages.news-list');
     }
-    public function addnews(){
+    public function addnews(request $request){
+
     	return view('admin_view.pages.add-news');
     }
      public function validationrules(Request $request){
@@ -40,12 +42,27 @@ class AdminController extends Controller
 		$this->validate($request,$rules);
 
    }
+   public function slidersubmit(request $request){
+    $this->validationrules($request);
+    $request->img->move('frontend/slider',$request->file('img')->getClientOriginalName());
+    $model=new slider();
+    $model->link_to_post=0;
+    $model->fill($request->except('_token'));
+    $model->img=$request->file('img')->getClientOriginalName();
+    $model->save();
+    return redirect()->route('slider');
+   }
     public function newssubmit(Request $request){
     	$this->validationrules($request);
+       // $request->file('img');
+        $request->img->move('frontend/images', $request->file('img')->getClientOriginalName());
+
     	$model = new addnews();
     	 $model->fill($request->except('_token'));
+           
+         $model->img=$request->file('img')->getClientOriginalName();   
          $model->save();
-          return redirect()->route('news.list');
+         return redirect()->route('news.list');
 
     }
     public function newsview($id){
@@ -61,9 +78,9 @@ class AdminController extends Controller
         $del=addnews::find($id);
         $del->delete();
         return redirect()->route('news.list');
-        
     }
     public function newsupdate(Request $request, $id){
+        
         $model=addnews::find($id);
         $model->fill($request->except('_token'));
         $model->save();

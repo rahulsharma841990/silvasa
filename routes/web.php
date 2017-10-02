@@ -16,6 +16,7 @@
 
 		Route::get('administrator',['as'=>'administrator', 'uses'=>'Admin\AdminController@dashboard']);
 		Route::get('slider',['as'=>'slider','uses'=>'Admin\AdminController@slider']);
+		Route::post('slider/submit',['as'=>'slider.submit','uses'=>'Admin\AdminController@slidersubmit']);
 		Route::get('slider/list',['as'=>'slider.list','uses'=>'Admin\AdminController@sliderList']);
 		Route::get('add-news',['as'=>'add-news','uses'=>'Admin\AdminController@addnews']);
 		Route::post('news/submit',['as'=>'news/submit','uses'=>'Admin\AdminController@newssubmit']);

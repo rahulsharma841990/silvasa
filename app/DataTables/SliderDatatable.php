@@ -16,7 +16,11 @@ class SliderDatatable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'admin_view.pages.slider_actions');
+            ->addColumn('action', function($model){
+                    return view('admin_view.pages.slider_actions',['model'=>$model]);
+                })->editColumn('img', function($model){
+             return '<img src="'.asset('frontend/slider/'.$model->img).'" />';
+            })->rawColumns(['img','action']);
     }
 
     /**
@@ -66,6 +70,7 @@ class SliderDatatable extends DataTable
             'id',
             'title',
             'desc',
+            'img',
             'created_at',
             'updated_at'
         ];
