@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\DataTables\SliderDatatable;
+use App\DataTables\NewsDatatable;
 use App\addnews;
 
 class AdminController extends Controller
@@ -24,6 +25,9 @@ class AdminController extends Controller
     public function sliderList(SliderDatatable $datatable){
     	return $datatable->render('admin_view.pages.slider-list');
     }
+     public function newsList(NewsDatatable $datatable){
+        return $datatable->render('admin_view.pages.news-list');
+    }
     public function addnews(){
     	return view('admin_view.pages.add-news');
     }
@@ -41,7 +45,29 @@ class AdminController extends Controller
     	$model = new addnews();
     	 $model->fill($request->except('_token'));
          $model->save();
-          return redirect()->route('add-news');
+          return redirect()->route('news.list');
 
     }
+    public function newsview($id){
+        $model=addnews::find($id);
+         return view('admin_view.pages.news_view',['model'=>$model]);
+    }
+    public function newsedit($id){
+        $model=addnews::find($id);
+        return view('admin_view.pages.news_edit',['model'=>$model]);
+        
+    }
+     public function newsdelete($id){
+        $del=addnews::find($id);
+        $del->delete();
+        return redirect()->route('news.list');
+        
+    }
+    public function newsupdate(Request $request, $id){
+        $model=addnews::find($id);
+        $model->fill($request->except('_token'));
+        $model->save();
+        return redirect()->route('news.list');
+    }
+
 }

@@ -377,7 +377,18 @@
                                     <li><a href="{{ url('/login') }}">Login</a></li>
                                     <li><a href="{{ url('/register') }}">Register</a></li>
                                  @else
-                                   <li><a href="{{route('logout')}}">My Account</a></li>
+                                   
+                                    <li class="dropdown hasmenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> My Membership <span class="fa fa-angle-down"></span></a>
+                                     <ul class="dropdown-menu">
+                                        <li><a href="">Profile</a></li>
+                                        <li><a href="{{url('bylaws')}}">Membership List</a></li>
+                                        <li><a href="javascript:;">Downloads</a></li>
+                                        <li><a href="javascript:;">Check before any Recruitment</a></li>
+                                        <li><a href="javascript:;"> local rules</a></li>
+                                          <li><a href="javascript:;"> FAQS</a></li>
+                                    </ul>
+                                </li>
                                    <li><a href="{{route('logout')}}">Logout</a></li>
                                    @endif
                             </ul>

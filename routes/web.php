@@ -19,6 +19,12 @@
 		Route::get('slider/list',['as'=>'slider.list','uses'=>'Admin\AdminController@sliderList']);
 		Route::get('add-news',['as'=>'add-news','uses'=>'Admin\AdminController@addnews']);
 		Route::post('news/submit',['as'=>'news/submit','uses'=>'Admin\AdminController@newssubmit']);
+		Route::get('news/list',['as'=>'news.list','uses'=>'Admin\AdminController@newsList']);
+		Route::get('news/list/view/{id}',['as'=>'news.list.view', 'uses'=>'Admin\AdminController@newsview']);
+		Route::get('news/list/edit/{id}',['as'=>'news.list.edit', 'uses'=>'Admin\AdminController@newsedit']);
+		Route::get('news/list/delete/{id}',['as'=>'news.list.delete', 'uses'=>'Admin\AdminController@newsdelete']);
+		Route::patch('news/list/update/{id}',['as'=>'news.list.update', 'uses'=>'Admin\AdminController@newsupdate']);
+
 
 	});
 	/*end of admin links */
