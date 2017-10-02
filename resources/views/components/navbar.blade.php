@@ -356,20 +356,20 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="{{url('certificate')}}">Registration Certificates</a></li>
                                         <li><a href="{{url('bylaws')}}">Bylaws</a></li>
-                                        <li><a href="javascript:;">Office Bearers</a></li>
-                                        <li><a href="javascript:;">Functional Committee</a></li>
-                                        <li><a href="javascript:;">Executive Committee</a></li>
+                                        <li><a href="{{url('Office_Bearers')}}">Office Bearers</a></li>
+                                        <li><a href="{{url('fun_committee')}}">Functional Committee</a></li>
+                                        <li><a href="{{url('Executive_committee')}}">Executive Committee</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{url('functions')}}">Functions</a></li>
                                 <li class="dropdown hasmenu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery <span class="fa fa-angle-down"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:;">Press Release</a></li>
-                                        <li><a href="javascript:;">Newsletter</a></li>
+                                        <li><a href="{{url('Press_release')}}">Press Release</a></li>
+                                        <li><a href="{{url('Newsletter')}}">Newsletter</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:;">Download</a></li>
+                                <li><a href="{{url('downloads')}}">Download</a></li>
                                 <li><a href="{{url('faq')}}">FAQ's</a></li>
                                 <li><a href="{{url('contact')}}">Contact Us</a></li>
                                  {{-- <li><a href="{{route('about')}}">About</a></li> --}}

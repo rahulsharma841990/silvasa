@@ -30,51 +30,29 @@
 	});
 	/*end of admin links */
 
-	Route::get('/',['as'=>'index', function () {
-	    return view('pages.index');
-	}]);
+/*user links*/
+	Route::get('/',['as'=>'index', 'uses'=>'UserContoller@index']);	
+	Route::get('about',['as'=>'about','uses'=>'UserContoller@about']);
+	Route::get('certificate',['as'=>'certificate', 'uses'=>'UserContoller@certificate']);
+	Route::get('bylaws',['as'=>'bylaws',  'uses'=>'UserContoller@bylaws']);
+	Route::get('functions',['as'=>'functions',  'uses'=>'UserContoller@functions']);
+	Route::get('faq',['as'=>'faq', 'uses'=>'UserContoller@faq']);
+	Route::get('profile',['as'=>'profile','uses'=>'UserContoller@profile']);
+	Route::get('downloads',['as'=>'downloads', 'uses'=>'UserContoller@downloads']);
+	Route::get('recruitment',['as'=>'recruitment','uses'=>'UserContoller@recruitment']);
+	Route::get('localrules',['as'=>'localrules', 'uses'=>'UserContoller@localrules']);
+	Route::get('contact',['as'=>'about', 'uses'=>'UserContoller@contact']);
+	Route::get('Office_Bearers',['as'=>'Office_Bearers', 'uses'=>'UserContoller@Office_Bearers']);
+	Route::get('fun_committee',['as'=>'Office_Bearers', 'uses'=>'UserContoller@fun_committee']);
+	Route::get('Executive_committee',['as'=>'Executive_committee', 'uses'=>'UserContoller@Executive_committee']);
+	Route::get('Press_release',['as'=>'Press_release', 'uses'=>'UserContoller@Press_release']);
+	Route::get('Newsletter',['as'=>'Newsletter', 'uses'=>'UserContoller@Newsletter']);
+	   
 
-	Route::get('about',['as'=>'about', function () {
-	    return view('pages.about');
-	}]);
-	
-	Route::get('certificate',['as'=>'about', function () {
-	    return view('pages.reg_certificate');
-	}]);
-
-	Route::get('bylaws',['as'=>'about', function () {
-	    return view('pages.bylaws');
-	}]);
-
-	Route::get('functions',['as'=>'about', function () {
-	    return view('pages.functions');
-	}]);
-
-	Route::get('faq',['as'=>'about', function () {
-	    return view('pages.faq');
-	}]);
-	Route::get('profile',['as'=>'profile', function () {
-	    return view('pages.profile');
-	}]);
-	Route::get('downloads',['as'=>'downloads', function () {
-	    return view('pages.downloads');
-	}]);
-	Route::get('recruitment',['as'=>'recruitment', function () {
-	    return view('pages.recruitment');
-	}]);
-	Route::get('localrules',['as'=>'localrules', function () {
-	    return view('pages.localrules');
-	}]);
-
-
-	Route::get('contact',['as'=>'about', function () {
-	    return view('pages.contact');
-	}]);
 
 	
 
 	Auth::routes();
-
 	Route::get('logout',  ['as'=> 'admin.logout','uses'=>'Auth\LoginController@logout']);
 	Route::get('/home', 'HomeController@index')->name('home');
 
