@@ -37,7 +37,7 @@
 	Route::get('about',['as'=>'about', function () {
 	    return view('pages.about');
 	}]);
-
+	
 	Route::get('certificate',['as'=>'about', function () {
 	    return view('pages.reg_certificate');
 	}]);
@@ -53,6 +53,19 @@
 	Route::get('faq',['as'=>'about', function () {
 	    return view('pages.faq');
 	}]);
+	Route::get('profile',['as'=>'profile', function () {
+	    return view('pages.profile');
+	}]);
+	Route::get('downloads',['as'=>'downloads', function () {
+	    return view('pages.downloads');
+	}]);
+	Route::get('recruitment',['as'=>'recruitment', function () {
+	    return view('pages.recruitment');
+	}]);
+	Route::get('localrules',['as'=>'localrules', function () {
+	    return view('pages.localrules');
+	}]);
+
 
 	Route::get('contact',['as'=>'about', function () {
 	    return view('pages.contact');

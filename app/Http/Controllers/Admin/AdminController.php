@@ -56,10 +56,8 @@ class AdminController extends Controller
     	$this->validationrules($request);
        // $request->file('img');
         $request->img->move('frontend/images', $request->file('img')->getClientOriginalName());
-
     	$model = new addnews();
-    	 $model->fill($request->except('_token'));
-           
+    	 $model->fill($request->except('_token'));          
          $model->img=$request->file('img')->getClientOriginalName();   
          $model->save();
          return redirect()->route('news.list');
@@ -80,7 +78,7 @@ class AdminController extends Controller
         return redirect()->route('news.list');
     }
     public function newsupdate(Request $request, $id){
-        
+
         $model=addnews::find($id);
         $model->fill($request->except('_token'));
         $model->save();
